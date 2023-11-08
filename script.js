@@ -26,7 +26,7 @@ var acceptLowercase;
 var acceptNumericValue;
 var acceptSpecialChar;
 var selected;
-
+//initalizing a function to geerate password based off the users selections
 function generatePassword () {
   SizeOfPassword = prompt("Hello! What length would you like your password to be? (Between 8-128 characters)")
 
@@ -35,9 +35,9 @@ function generatePassword () {
     if (SizeOfPassword < 8 || SizeOfPassword > 128 ) {
       SizeOfPassword = prompt ("Please try again. Enter a value between 8 and 128.");
     } 
-
+    
   }
-}
+
 
 if (SizeOfPassword >= 8 || SizeOfPassword <= 128) {
   acceptUppercase = confirm("Would you like uppercase characters to be in your password?")
@@ -45,10 +45,9 @@ if (SizeOfPassword >= 8 || SizeOfPassword <= 128) {
   acceptSpecialChar = confirm("Would you like special characters to be in your password?")
   acceptNumericValue = confirm("Would you like numeric characters to be in your password?")
 }
-
+// If value is outside the 8-128 range, the prompt will reappear until a value within that range is inputted
 
 for (var i = 0; i < number.length; i++) {
-  if (acceptLowercase = false & acceptUppercase = false & acceptNumericValue = false & acceptSpecialChar = false ) {
   if (acceptLowercase === false && acceptUppercase === false && acceptNumericValue === false && acceptSpecialChar === false ) {
     selected = alert ("You must select atleast one characcter type.");
     acceptUppercase = confirm("Would you like uppercase characters to be in your password?")
@@ -56,99 +55,102 @@ for (var i = 0; i < number.length; i++) {
     acceptSpecialChar = confirm("Would you like special characters to be in your password?")
     acceptNumericValue = confirm("Would you like numeric characters to be in your password?")
   } 
-
+  
 }
-}
-
-if (acceptLowercase = true & acceptUppercase === true & acceptNumericValue === true & acceptSpecialChar === true ) {
-  selected = number.concat (lowerCaseLtr, upperCaseLtr, specialChar);
-
-} 
 
 //if user selects 3/4 character types
 if (acceptLowercase = true & acceptUppercase === true & acceptNumericValue === true & acceptSpecialChar === true ) {
   selected = number.concat (lowerCaseLtr, upperCaseLtr, specialChar);
-
+  
 } 
 
 else if (acceptLowercase = true & acceptUppercase === true & acceptNumericValue === true) {
   selected = number.concat (lowerCaseLtr, upperCaseLtr);
-
+  
 } 
 
 else if (acceptSpecialChar = true & acceptUppercase === true & acceptNumericValue === true) {
   selected = number.concat (lowerCaseLtr, specialChar);
-
+  
 } 
 
 else if (acceptSpecialChar = true & acceptUppercase === true & acceptNumericValue === true) {
   selected = number.concat (specialChar, upperCaseLtr);
-
+  
 } 
 
 else if (acceptLowercase = true & acceptUppercase === true & acceptSpecialChar === true) {
   selected = number.concat (lowerCaseLtr, upperCaseLtr);
-
+  
 } 
 
 //if user selects 2/4 character types
 
 else if (acceptLowercase = true & acceptUppercase === true) {
   selected = lowerCaseLtr.concat (upperCaseLtr);
-
+  
 } 
 
 else if (acceptLowercase = true & acceptSpecialChar === true) {
   selected = specialChar.concat (lowerCaseLtr);
-
+  
 } 
 
 else if (acceptUppercase === true & acceptSpecialChar === true) {
   selected = specialChar.concat (upperCaseLtr);
-
+  
 } 
 
 else if (acceptNumericValue === true & acceptSpecialChar === true) {
   selected = number.concat (specialChar);
-
+  
 } 
 
 else if (acceptNumericValue === true & acceptLowercase === true) {
   selected = number.concat (lowerCaseLtr);
-
+  
 } 
 
 else if (acceptNumericValue === true & acceptUppercase === true) {
   selected = number.concat (upperCaseLtr);
-
+  
 } 
+
 //if user selects 1/4 character types
 
 else if (acceptNumericValue === true) {
   selected = number;
-
+  
 } 
 
 else if (acceptSpecialChar === true) {
   selected = specialChar;
-
+  
 } 
 
 else if (acceptUppercase === true) {
   selected = upperCaseLtr;
-
+  
 } 
 
 else if (acceptLowercase === true) {
   selected = lowerCaseLtr;
-
+  
 }
 
+//setting up array to return a generated password
 var emptyArray = [];
 
 for (var i = 0; i < SizeOfPassword; i++) {
-
+  
     var totalSelected = selected[Math.floor(Math.random() * selected.length)];
-
+  // pushing randomized values saved from "totalSelected" and initalized them into the "emptyArray" array
   emptyArray.push(totalSelected)
+  
+}
+
+var newGeneratedPassword = emptyArray.join("");
+
+return newGeneratedPassword;
+
 }
