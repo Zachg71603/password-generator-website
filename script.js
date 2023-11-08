@@ -49,6 +49,7 @@ if (SizeOfPassword >= 8 || SizeOfPassword <= 128) {
 
 for (var i = 0; i < number.length; i++) {
   if (acceptLowercase = false & acceptUppercase = false & acceptNumericValue = false & acceptSpecialChar = false ) {
+  if (acceptLowercase === false && acceptUppercase === false && acceptNumericValue === false && acceptSpecialChar === false ) {
     selected = alert ("You must select atleast one characcter type.");
     acceptUppercase = confirm("Would you like uppercase characters to be in your password?")
     acceptLowercase = confirm("Would you like lowercase characters to be in your password?")
@@ -57,3 +58,9 @@ for (var i = 0; i < number.length; i++) {
   } 
 
 }
+}
+
+if (acceptLowercase = true & acceptUppercase === true & acceptNumericValue === true & acceptSpecialChar === true ) {
+  selected = number.concat (lowerCaseLtr, upperCaseLtr, specialChar);
+
+} 
