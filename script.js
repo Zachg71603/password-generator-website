@@ -143,3 +143,12 @@ else if (acceptLowercase === true) {
   selected = lowerCaseLtr;
 
 }
+
+var emptyArray = [];
+
+for (var i = 0; i < SizeOfPassword; i++) {
+
+    var totalSelected = selected[Math.floor(Math.random() * selected.length)];
+
+  emptyArray.push(totalSelected)
+}
